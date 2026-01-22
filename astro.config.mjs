@@ -20,7 +20,7 @@ export default defineConfig({
         			src: './public/RengeOS-logo.svg',
 				replacesTitle: false,
       			},
-			favicon: './public/favicon.ico',
+			favicon: './favicon.ico',
 			sidebar: [
 				{
 					label: 'Guides',

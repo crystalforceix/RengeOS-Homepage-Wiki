@@ -8,7 +8,7 @@ export default defineConfig({
 	site: 'https://rengeos-wiki.vercel.app',
 	integrations: [
 		starlight({
-			title: 'RengeOS docs',
+			title: 'RengeOS wiki',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/RengeOS' }],
 			plugins: [
         			catppuccin({
@@ -21,12 +21,14 @@ export default defineConfig({
 				replacesTitle: false,
       			},
 			favicon: './favicon.ico',
+			customCss: [
+        			'./src/styles/custom.css',
+			],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+					label: 'About',
+					items:[
+						{ label: 'What is this?', slug: 'guides/example' },
 					],
 				},
 				{

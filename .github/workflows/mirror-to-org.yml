@@ -18,6 +18,6 @@ jobs:
 
       - name: Push mirror to org repo (RengeOS)
         run: |
-          git remote add org https://x-access-token:${{ secrets.ORG_REPO_TOKEN }}@github.com/RengeOS-Homepage-Wiki.git
+          git remote add org https://x-access-token:${{ secrets.ORG_REPO_TOKEN }}@github.com/RengeOS/RengeOS-Homepage-Wiki.git
           git push --mirror org
 

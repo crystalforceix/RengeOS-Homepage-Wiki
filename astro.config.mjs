@@ -8,7 +8,7 @@ export default defineConfig({
 	site: 'https://rengeos-wiki.vercel.app',
 	integrations: [
 		starlight({
-			title: 'RengeOS wiki',
+			title: 'RengeOS',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/RengeOS' }],
 			plugins: [
         			catppuccin({

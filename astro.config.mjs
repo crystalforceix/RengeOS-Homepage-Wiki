@@ -18,6 +18,7 @@ export default defineConfig({
       			],
 			logo: {
         			src: './public/RengeOS-logo.svg',
+				replacesTitle: false,
       			},
 			favicon: './public/favicon.ico',
 			sidebar: [

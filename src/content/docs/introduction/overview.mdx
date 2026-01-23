@@ -1,19 +1,49 @@
 ---
 title: Overview
-description: Here's a brief introduction to this distribution
 ---
 
 ## What's this?
-**RengeOS** is an Arch Linux-based distribution focused on minimalism, performance, stability, and high self-maintenance,
- allowing you to repair your system on faulty partitions using Recovery Mode.
+**RengeOS** is an Arch Linux-based distribution focused on minimalism, performance, stability, high compatibility (supporting both UEFI and Legacy BIOS modes), and high self-maintenance capabilities.
 
+<br />
 
 ## System Requirements
 ---
 | Component | Minimum | Recommended |
 | :--- | :--- | :--- |
-| **Processor** | 2 GHz Dual Core | 2 GHz Quad Core |
+| **Processor** | 1 GHz Dual Core | 2 GHz Quad Core |
 | **RAM** | 2 GB | 4 GB |
-| **Storage** | 21 GB | 45 GB |
+| **Storage** | 20 GB | 35 GB |
 
 ---
+
+## So what does it have?
+
++ Although it might be **minimal**, the installation process will be quite easy thanks to ``ros-installer``, which allows direct interaction with the installation process via a TUI (dialog).
+
++ **It is built on minimalist principles** and contains **no unnecessary components**,
+  resulting in superior overall performance.
+  The integration of a **recovery mode** (optional) ensures easy system repair in case of errors.
+  Furthermore, stability is enhanced by <a href="https://bcachefs.org/" target="_blank" rel="noopener noreferrer">Bcachefs Filesystem</a>, which supports efficient snapshot creation and management,
+  similar to **Btrfs** but with much greater efficiency.
+
++ It provides an integrated solution to **factory reset** the system and **erase all data** without needing a bootable ISO file or USB drive.
+  Simply boot into **Recovery Mode** using ``ros-reborn`` via a TUI (dialog) to restore the system to its **original state** as when it was first installed.
+  
++ **The default Linux kernel** is based on the **XanMod Kernel** with several customizations such as a **BORE scheduler** (for the latest kernels except LTS),
+  **O3 optimization** (both kernels), **glitched patches from the Frogging Family** (for the latest kernels except LTS)
+  and **other patches**, providing powerful system performance :)
+
++ The compression standard for everything here is the **LZ4 algorithm**
+  because it's probably the **fastest algorithm** currently applied by default to the **default built in kernel, zram, mkinitcpio,
+  and many others**, delivering quite impressive results in my opinion.
+
++ By default, **future distros** will always be the base system and will always **support UEFI and Legacy BIOS modes**,
+  as well as **bcachefs** in the future, because I want it to be compatible, stable, and lightweight for both older and newer machines up to this point,
+  and also to save as many outdated laptops as possible, heheh
+
+<br />
+
+## Questions and Answers
+ - Q: Does it support UEFI and Legacy BIOS modes?
+ + A: Yes!

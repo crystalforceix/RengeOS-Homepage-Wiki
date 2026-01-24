@@ -1,6 +1,40 @@
 ---
 title: Getting an ISO
-description: How to get an ISO
 ---
 
-(COMING SOON!)
+First, we have two ways to obtain an ISO file.
++ If you want the convenience of saving time on building, you can choose to download the ISO from hosting services.
++ If you want your ISO to always be up-to-date, you can choose to build it from source code.
+
+## Obtain an ISO from hosting services (Any)
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title="Google Drive" icon="cloud-download">
+    Obtain an ISO here: <a href="https://drive.google.com/" target="_blank" rel="noopener noreferrer">Download</a>
+  </Card>
+  <Card title="SourceForge" icon="cloud-download">
+    Obtain an ISO here: <a href="https://sourceforge.net/" target="_blank" rel="noopener noreferrer">Download</a>
+  </Card>
+</CardGrid>
+
+## Build it from source code (Arch-based)
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">
+  Sometimes, constant updates by the maintainer can make the ISO file unstable.
+</Aside>
+
+**Let's get started!**
+
++ First, you need to git clone this folder to your HOME directory.
+```sh
+# You can replace ~ with $HOME if you want.
+cd ~ && git clone https://github.com/RengeOS/Source-ISO && cd ~/Source-ISO/
+```
++ Then run the ``build_iso`` script.
+
+```sh
+./build_iso
+```
++ After the build process is complete, we will have the ISO file located in the ``out`` folder.

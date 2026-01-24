@@ -14,11 +14,25 @@ so we can now enable snapshots for bcachefs by running the `bcachefs-rollback` h
 
 ## Let's proceed
 <br />
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution" title="Watch out!">
+  **Currently**, this method is used daily by the owner on their personal computer,
+  but there is no guarantee that it will not cause any problems in the future,
+  and since it is not a common method, use it at **your own risk!**
+</Aside>
+
 **First**, we need to ``git clone`` this source before proceeding.
 
 ```sh
 cd /tmp/ && git clone https://github.com/RengeOS/Bcachefs-Rollback-Initramfs
 ```
+
+<Aside type="danger">
+  **Do not** modify hooks inside the source code if you do not understand how they work, as this could lead to **Kernel Panic!**
+</Aside>
+
 **Next**, we will install it by building it from source code with ``makepkg -si``.
 
 ```sh

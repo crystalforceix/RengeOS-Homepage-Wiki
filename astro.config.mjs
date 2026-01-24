@@ -1,8 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import catppuccin from "@catppuccin/starlight";
-
+import starlightThemeGalaxy from 'starlight-theme-galaxy'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rengeos-wiki.vercel.app',
@@ -11,16 +10,14 @@ export default defineConfig({
 			title: 'RengeOS',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/RengeOS' }],
 			plugins: [
-        			catppuccin({
-					dark: { flavor: "mocha", accent: "mauve" },
-          				light: { flavor: "latte", accent: "mauve" },
-       				})
-      			],
+       		      starlightThemeGalaxy()
+      			 ],
 			logo: {
         			src: './public/RengeOS-logo.svg',
-				replacesTitle: false,
+			replacesTitle: false,
       			},
 			favicon: './favicon.ico',
+			lastUpdated: true,
 			customCss: [
         			'./src/styles/custom.css',
 			],
@@ -30,6 +27,7 @@ export default defineConfig({
 					items:[
 						{ label: 'Overview', slug: 'introduction/overview' },
 					],
+					collapsed: false,
 				},
 				{
 					label: 'Getting Started',
@@ -37,6 +35,7 @@ export default defineConfig({
 						{ label: 'Getting an ISO', slug: 'getting-started/getting-an-iso' },
 						{ label: 'Create Bootable USB', slug: 'getting-started/create-bootable-usb' },
 					],
+					collapsed: false,
 				},
 				{
 					label: 'Installation',
@@ -44,16 +43,19 @@ export default defineConfig({
 						{ label: 'Automated Installation (Recommended)', slug: 'installation/automated-installation'},
 						{ label: 'Manual Installation (Not Recommended By Author)', slug: 'installation/manual-installation'},
 					],
+					collapsed: false,
 				},
 				{
 					label: 'Configuration',
 					items: [
 						{ label: 'Enable Bcachefs Rollback', slug: 'configuration/enable-bcachefs-rollback'},
 					],
+					collapsed: false,
 				},
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
+					collapsed: true,
 				},
 			],
 		}),

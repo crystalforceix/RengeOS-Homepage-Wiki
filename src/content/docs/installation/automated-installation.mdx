@@ -6,11 +6,11 @@ title: Automated Installation
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="note">
-  **Currently**, only offline installation is supported,
+  **Currently**, only **Offline Installation** is **supported**,
   and there are no plans to switch the installation process to online for the following reasons:
-+ **Online installation** can be quite risky if the network encounters problems during the installation process,
++ **Online Installation** can be quite risky if the network encounters problems during the installation process,
   such as installing a package, as restarting the process would be very inconvenient.
-+ The **online installation** process is not compatible with the original design of this distribution (RengeOS).
++ The **Online Installation** process is not compatible with the original design of this distribution (**RengeOS**).
 + Maintaining **other packages** and **infrastructure** using online methods would be quite expensive for me :(
 </Aside>
 
@@ -151,7 +151,7 @@ ros-installer
 
 ![14](../../../assets/example-ros-installer/14.png)
 
-## Wait for the setup process to complete
+## Check before proceeding with setup
 
 - **Now** we need to review and confirm whether it has met expectations.
 - **If** you're okay with it, you can select **Yes**. Otherwise, select **No**, and you can start the process again.
@@ -161,5 +161,46 @@ ros-installer
   **Make sure** you have backed up all important data as it will erase everything.
 </Aside>
 
-| ![15](../../../assets/example-ros-installer/15.png) | ![16](../../../assets/example-ros-installer/16.png) |
+![15](../../../assets/example-ros-installer/15.png) | ![17](../../../assets/example-ros-installer/17.png) |
 |--------------|--------------|
+
+- **The process** will then continue according to the previously configured settings.
+
+![16](../../../assets/example-ros-installer/16.png)
+
+## Configure passwords for Root and User
+
+- **After** the setup and configuration process is complete, we will move on to configuring passwords for ``root`` and ``user`` accounts.
++ **And now** we'll begin with setting up the ``root`` password.
+
+![18](../../../assets/example-ros-installer/18.png) | ![19](../../../assets/example-ros-installer/19.png) |
+|-----------------|----------------|
+
+- **Once** we've set up the root password, we'll move on to setting up passwords for the ``user`` accounts.
+
+![20](../../../assets/example-ros-installer/20.png) | ![21](../../../assets/example-ros-installer/21.png) |
+|-----------------|----------------|
+
+## Configure Zram (Virtual RAM)
+
+- **After** successfully completing the password configuration process, the next step is to choose whether or not to enable Zram.
+
+<Aside type="note">
+**The following** scenarios may occur:
++ **If** you see that your device has **less than 8GB** of physical RAM, it's recommended to prioritize selecting ``Yes`` as
+  it can help prevent RAM overflow later on during crashes,
+  building apps from source code, playing demanding games, etc.
++ **If** you already have **too much** RAM or **enough** for your needs without needing more virtual RAM, you can choose ``No``.
+</Aside>
+
+![22](../../../assets/example-ros-installer/22.png)
+
+## Wait for the installation process to complete
+
+- **After** the password setup and ZRAM configuration process is complete,
+  you can make yourself a hot cup of coffee and wait until everything is finished, and you will reach the completion menu.
+
+![23](../../../assets/example-ros-installer/23.png) | ![24](../../../assets/example-ros-installer/24.png) |
+|---------------|--------------|
+
+- **Congratulations! You have successfully installed RengeOS on your system!!** 🎉 🎉

@@ -21,8 +21,7 @@ title: Overview
 
 + Although it might be **minimal**, the installation process will be quite easy thanks to ``ros-installer``, which allows direct interaction with the installation process via a TUI (dialog).
 
-+ **It is built on minimalist principles** and contains **no unnecessary components**,
-  resulting in superior overall performance.
++ **It is built on minimalist principles** and contains **no unnecessary components**.
   The integration of a **recovery mode** (optional) ensures easy system repair in case of errors.
   Furthermore, stability is enhanced by <a href="https://bcachefs.org/" target="_blank" rel="noopener noreferrer">Bcachefs Filesystem</a>, which supports efficient snapshot creation and management,
   similar to **Btrfs** but with much greater efficiency.
@@ -45,5 +44,11 @@ title: Overview
 <br />
 
 ## Questions and Answers
- - Q: Does it support UEFI and Legacy BIOS modes?
+ - Q: **Does** it support UEFI and Legacy BIOS modes?
  + A: Yes!
+
+ - Q: **Is it** stable and safe for daily use?
+ + A: Basically yes!, but it's not guaranteed yet as it's still under development btw you can try it once:)
+
+ - Q: **Why** did you choose ``bcachefs`` even though it's not yet widely used as a primary filesystem?
+ - A: Because I like its filesystem design and it provides good support for ``LZ4 Algorithm`` in background compression and many other things like ``snapshots``, ``hard drive bcache``, ``CoW``, etc.

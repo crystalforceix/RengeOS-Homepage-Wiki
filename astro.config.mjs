@@ -50,6 +50,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Enable Bcachefs Rollback', slug: 'configuration/enable-bcachefs-rollback'},
 						{ label: 'Restore RengeOS To Its Original State (With Recovery Mode)', slug: 'configuration/restore-rengeos'},
+						{ label: 'Change GRUB Theme', slug:'configuration/change-grub-theme'},
 					],
 					collapsed: false,
 				},
@@ -58,7 +59,7 @@ export default defineConfig({
 					items: [
 						{ label: 'About Me', slug: 'reference/about-me'},
 					],
-					collapsed: false,
+					collapsed: true,
 				},
 			],
 		}),

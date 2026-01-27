@@ -57,9 +57,10 @@ export default defineConfig({
 				{
 					label: 'Reference',
 					items: [
+						{ label: 'Credits', slug: 'reference/credits'},
 						{ label: 'About Me', slug: 'reference/about-me'},
 					],
-					collapsed: true,
+					collapsed: false,
 				},
 			],
 		}),

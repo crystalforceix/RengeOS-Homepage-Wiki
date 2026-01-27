@@ -2,7 +2,22 @@
 title: Restore RengeOS (Recovery Mode)
 ---
 
-**We** will use ``ros-reborn`` (TUI) to automate the RengeOS restore process to its original state using the ``unsquashfs`` method
+- **Essentially**, the ``ros-reborn`` tool allows users to reset their system to its original state
+ (as when it was first installed) without having to reinstall using a **Live ISO with a USB drive** as is the usual method.
+
+- **So** we will use ``ros-reborn`` (TUI) to automate the RengeOS restore process to its original state using the ``unsquashfs`` method
 and some other related techniques during the process.
 
 ## Let's proceed
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="note">
+  **Make sure** you have enabled ``Recovery Mode`` during **installation**, and that ``Recovery Mode`` appears in the ``GRUB`` menu.
+</Aside>
+
+- **After** booting up your device, at the bottom of the GRUB menu you will see an option called ``Recovery Mode``.
+  **Select it** and **boot** into it before proceeding with ``ros-reborn``.
+
+![1](../../../assets/example-ros-reborn/1.png)
+
+(coming soon!)

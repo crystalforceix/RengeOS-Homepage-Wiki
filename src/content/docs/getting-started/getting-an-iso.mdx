@@ -24,7 +24,7 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="caution">
-  Sometimes, constant updates by the maintainer can make the ISO file unstable.
+  **Sometimes**, constant updates by the maintainer can make the ISO file unstable.
 </Aside>
 
 **Let's get started!**
@@ -42,9 +42,12 @@ cd ~ && git clone https://github.com/RengeOS/Source-ISO && cd ~/Source-ISO/
 + **After** the build process is complete, we will have the ISO file located in the ``out`` folder.
 + **Inside** the `out` folder, you will find the **ISO file** and the **SHA256 checksum file**.
 
-## Checksum files (Recommend)
+## Checksum ISO file (Recommend)
 
-- **Please ensure** you have the ``sha256sum`` package on **your distribution** before proceeding.
+<Aside type="caution">
+**Please ensure** you have the ``sha256sum`` package on **your distribution** before proceeding.
+</Aside>
+
 - **You** might be **wondering** **how to** ensure the integrity of an **ISO file** when it's downloaded.
 - **Therefore**, we will perform an additional step to verify the integrity of the ISO by comparing the ISO with the SHA256 hash following the steps below:
 + **First**, **make sure** you have downloaded the **ISO file** and the **SHA256 ISO file** to the same folder before testing!

@@ -93,30 +93,6 @@ ros-installer
 - If you choose **No**, that's perfectly fine because recovery mode is essentially a second root partition on the device,
   created to help users repair the main root partition more easily without needing a Live ISO.
 
-## System configuration
-
-- **Now** it will ask you for your computer's hostname, so enter the name you want.
-
-![9](../../../assets/example-ros-installer/9.png)
-
-**After** completing that, the next step is to provide the user's username
-
-<Aside type="caution">
-  Remember that you will use it to log in as a user.
-</Aside>
-
-![10](../../../assets/example-ros-installer/10.png)
-
-## Timezone and System locale
-- **Now** we need to select the time region, here, I've chosen ``Asia/Ho_Chi_Minh`` because I live there
-
-![11](../../../assets/example-ros-installer/11.png)
-
-- **After** selecting your region, the next step is to choose your system locale.
-- **If** you're unsure what to choose, just select ``English (US)`` as it's the **default** standard on most **other distributions**, and I chose it too.
-
-![12](../../../assets/example-ros-installer/12.png)
-
 ## Kernel selection
 - **The next step** is to select the **kernel** that will be installed and used as the **default**.
 
@@ -151,7 +127,60 @@ ros-installer
 
 ![14](../../../assets/example-ros-installer/14.png)
 
-## Check before proceeding with setup
+## Configure Zram (Virtual RAM)
+
+- **After** successfully completing filesystem selection configuration process, the next step is to choose whether or not to enable Zram.
+
+<Aside type="note">
+**The following** scenarios may occur:
++ **If** you see that your device has **less than 8GB** of physical RAM, it's recommended to prioritize selecting ``Yes`` as
+  it can help prevent RAM overflow later on during crashes,
+  building apps from source code, playing demanding games, etc.
++ **If** you already have **too much** RAM or **enough** for your needs without needing more virtual RAM, you can choose ``No``.
+</Aside>
+
+![22](../../../assets/example-ros-installer/22.png)
+
+## Timezone and System locale
+- **Now** we need to select the time region, here, I've chosen ``Asia/Ho_Chi_Minh`` because I live there
+
+![11](../../../assets/example-ros-installer/11.png)
+
+- **After** selecting your region, the next step is to choose your system locale.
+- **If** you're unsure what to choose, just select ``English (US)`` as it's the **default** standard on most **other distributions**, and I chose it too.
+
+![12](../../../assets/example-ros-installer/12.png)
+
+
+## System configuration
+
+- **Now** it will ask you for your computer's hostname, so enter the name you want.
+
+![9](../../../assets/example-ros-installer/9.png)
+
+**After** completing that, the next step is to provide the user's username
+
+<Aside type="caution">
+  Remember that you will use it to log in as a user.
+</Aside>
+
+![10](../../../assets/example-ros-installer/10.png)
+
+
+## Configure passwords for Root and User
+
+- **After that**, we will move on to configuring passwords for ``root`` and ``user`` accounts.
++ **And now** we'll begin with setting up the ``root`` password.
+
+![18](../../../assets/example-ros-installer/18.png) | ![19](../../../assets/example-ros-installer/19.png) |
+|-----------------|----------------|
+
+- **Once** we've set up the root password, we'll move on to setting up passwords for the ``user`` accounts.
+
+![20](../../../assets/example-ros-installer/20.png) | ![21](../../../assets/example-ros-installer/21.png) |
+|-----------------|----------------|
+
+## Check before the installation process begins
 
 - **Now** we need to review and confirm whether it has met expectations.
 - **If** you're okay with it, you can select **Yes**. Otherwise, select **No**, and you can start the process again.
@@ -168,37 +197,9 @@ ros-installer
 
 ![16](../../../assets/example-ros-installer/16.png)
 
-## Configure passwords for Root and User
-
-- **After** the setup and configuration process is complete, we will move on to configuring passwords for ``root`` and ``user`` accounts.
-+ **And now** we'll begin with setting up the ``root`` password.
-
-![18](../../../assets/example-ros-installer/18.png) | ![19](../../../assets/example-ros-installer/19.png) |
-|-----------------|----------------|
-
-- **Once** we've set up the root password, we'll move on to setting up passwords for the ``user`` accounts.
-
-![20](../../../assets/example-ros-installer/20.png) | ![21](../../../assets/example-ros-installer/21.png) |
-|-----------------|----------------|
-
-## Configure Zram (Virtual RAM)
-
-- **After** successfully completing the password configuration process, the next step is to choose whether or not to enable Zram.
-
-<Aside type="note">
-**The following** scenarios may occur:
-+ **If** you see that your device has **less than 8GB** of physical RAM, it's recommended to prioritize selecting ``Yes`` as
-  it can help prevent RAM overflow later on during crashes,
-  building apps from source code, playing demanding games, etc.
-+ **If** you already have **too much** RAM or **enough** for your needs without needing more virtual RAM, you can choose ``No``.
-</Aside>
-
-![22](../../../assets/example-ros-installer/22.png)
-
 ## Wait for the installation process to complete
 
-- **After** the password setup and ZRAM configuration process is complete,
-  you can make yourself a hot cup of coffee and wait until everything is finished, and you will reach the completion menu.
+- **Now** you can make yourself a hot cup of coffee and wait until everything is finished, and you will reach the completion menu.
 
 ![23](../../../assets/example-ros-installer/23.png) | ![24](../../../assets/example-ros-installer/24.png) |
 |---------------|--------------|

@@ -11,6 +11,11 @@ and some other related techniques during the process.
 ## Let's proceed
 import { Aside } from '@astrojs/starlight/components';
 
+<Aside type="caution" title="Watch out!">
+  **Be careful** when using ``ros-reborn`` because it will erase the entire ``/`` and ``/boot``
+  drives to install the new version (the ``Recovery Mode`` partition will not be affected).
+</Aside>
+
 <Aside type="note">
   **Make sure** you have enabled ``Recovery Mode`` during **installation**, and that ``Recovery Mode`` appears in the ``GRUB`` menu.
 </Aside>

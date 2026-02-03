@@ -55,6 +55,11 @@ export default defineConfig({
 					collapsed: false,
 				},
 				{
+					label: 'Architecture',
+					items: [],
+					collapsed: true,
+				},
+				{
 					label: 'Reference',
 					items: [
 						{ label: 'Credits', slug: 'reference/credits'},

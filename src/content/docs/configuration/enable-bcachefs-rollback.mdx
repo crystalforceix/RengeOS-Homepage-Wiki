@@ -56,4 +56,38 @@ reboot
 
 ## Options in Bacachefs Rollback
 
-(Coming Soon!)
+<Aside type="note">
+  **Currently**, you may see many **options** like the image above and **feel hesitant**,
+  but **don't worry** because you'll mostly use ``bcachefs snapshots`` rather than other
+  unrelated things like ``squashfs`` and ``flags``, and it's very simple to use :)
+</Aside>
+
+
+<Aside type="caution" title="note">
+- The ``/`` partition and the ``@current-root`` snapshot partition are **two completely different things**.
+- ``@current-root`` will **always be located** in the following path: ``/.snapshots/@current-root``
+- ``@current-root`` can be **created** based on the ``/`` partition or ``other snapshots`` you have **created**.
+</Aside>
+
+### ---Boot Options---
+
+- ``[b] boot root system`` : **Allows direct booting into the ``/`` partition**.
+<br />
+- ``[s] boot into a snapshot`` : **Allows you to boot into the created snapshot you want in ``/.snapshots/``**.
+  **Simply enter the information on the listed created snapshot and you will boot into that snapshot**.
+<br />
+- ``[x] boot into squashfs``: **Allow booting into the created ``name.sfs`` file, usually located in ``/``**.
+<br />
+- ``[c] boot into custom dir``: **This allows you to boot into the created snapshot with your desired path, and by default you will be at ``/``**.
+
+### ---Restore Options---
+
+- ``[p] restore root system from @current-root (using cp)`` : **Allows you to restore ``/`` from the ``@current-root`` snapshot using the ``cp`` command, and you will be able to boot into ``/`` instead of just the ``@current-root`` snapshot**.
+<br />
+- ``[r] restore other snapshot to @current-root (backup old)`` : **This allows you to select the snapshot that was created as the primary snapshot,
+  which will become the ``@current-root`` and
+  will also back up the previous ``@current-root`` to ``@previous-root`` for safety in case you need to return to it later**.
+<br />
+- ``[R] restore other snapshot to @current-root (using mv)`` : **Allows you to select the snapshot that was created as the primary snapshot, which will become the ``@current-root`` using ``mv`` command**.
+<br />
+(Everything will be finished soon!)

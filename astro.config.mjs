@@ -48,9 +48,10 @@ export default defineConfig({
 				{
 					label: 'Configuration',
 					items: [
-						{ label: 'Enable Bcachefs Rollback', slug: 'configuration/enable-bcachefs-rollback'},
-						{ label: 'Restore RengeOS To Its Original State (With Recovery Mode)', slug: 'configuration/restore-rengeos'},
 						{ label: 'Change GRUB Theme', slug:'configuration/change-grub-theme'},
+						{ label: 'Enable Bcachefs Rollback', slug: 'configuration/enable-bcachefs-rollback'},
+						{ label: 'Restore RengeOS To Its Original State (Recovery Mode)', slug: 'configuration/restore-rengeos'},
+						{ label: 'Update airootfs and kernel for ros-reborn (Recovery Mode)', slug: 'configuration/update-ros-reborn'},
 					],
 					collapsed: false,
 				},

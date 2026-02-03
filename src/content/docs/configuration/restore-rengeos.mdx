@@ -8,12 +8,12 @@ title: Restore RengeOS (Recovery Mode)
 - **So** we will use ``ros-reborn`` (TUI) to automate the RengeOS restore process to its original state using the ``unsquashfs`` method
 and some other related techniques during the process.
 
-## Let's proceed
+## Boot into Recovery Mode
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="caution" title="Watch out!">
   **Be careful** when using ``ros-reborn`` because it will erase the entire ``/`` and ``/boot``
-  drives to install the new version (the ``Recovery Mode`` partition will not be affected).
+  partitions to install the new version (the ``Recovery Mode`` partition will not be affected).
 </Aside>
 
 <Aside type="note">
@@ -25,4 +25,187 @@ import { Aside } from '@astrojs/starlight/components';
 
 ![1](../../../assets/example-ros-reborn/1.png)
 
-(coming soon!)
+## Start the process
+
+<Aside type="note">
+  ``Recovery Mode`` always only has one **root account** and there are **no other user accounts**.
+</Aside>
+
+- **After** booting into ``Recovery Mode`` from the ``GRUB`` menu option, we will log in as **root** using the password you set for **root** during the **previous RengeOS installation**.
+
+![2](../../../assets/example-ros-reborn/2.png)
+
+- **Next**, we will proceed with the **factory reset** process using ``ros-reborn``.
+
+```sh
+ros-reborn
+```
+
+- **You** will immediately see this TUI appear and that is the ``ros-reborn`` tool.
+
+![3](../../../assets/example-ros-reborn/3.png)
+
+## Boot mode
+
+<Aside type="caution" title="Watch out!">
+  **This step** is **extremely important because** choosing the wrong **boot mode** can lead to **serious problems**
+  such as being unable to boot into your system,
+  corrupted ``GRUB``,
+  or **worse**, having to **reinstall RengeOS** using a **USB drive with a Live ISO**.
+</Aside>
+
+- **Now** we have two options: ``UEFI`` and ``Legacy BIOS``.
+
+- **Make sure** you know what your boot mode is. If not, check your ``BIOS``. Also, ensure you don't have ``Hybrid Mode`` enabled.
+
+- **Here** I will choose ``UEFI`` because **my machine** is currently using that **boot mode**.
+
+![4](../../../assets/example-ros-reborn/4.png)
+
+## Select partitions
+<Aside type="caution" title="Watch out!">
+  **Be careful** with what you choose at this step as it can lead to serious problems such as partition corruption, so please choose correctly!
+</Aside>
+
+### EFI(boot) and Root paritions
+
+- **After** selecting the **boot mode**, **the next step** is to choose the partitions in **the following order**:
+- **EFI partition (Legacy BIOS is similar) -> Root partition -> Recovery Partition**
+
+--------------------------------------------------------------------------------------
++ **First**, we need to select the **EFI (boot) partition** and the **root partition**.
++ **Here**, the **EFI (boot) partition** will be ``sda1`` and the **root partition** will be ``sda3``.
+
+![5](../../../assets/example-ros-reborn/5.png) | ![6](../../../assets/example-ros-reborn/6.png) |
+|----------------------------------------------|------------------------------------------------|
+
+### Recovery parition
+
++ **After** selecting the **two partitions like above**, you will be asked if you want to **choose a partition** for ``Recovery Mode``.
+
+<Aside type="note">
+The ``Recovery Mode`` partition will not be formatted and will remain intact. This process is primarily necessary to prevent accidental formatting.
+</Aside>
+
+- **Here** I have ``Recovery Mode`` enabled and I will select the ``sda2`` partition as the ``Recovery Mode`` partition.
+
+![7](../../../assets/example-ros-reborn/7.png) | ![8](../../../assets/example-ros-reborn/8.png) |
+|----------------------------------------------|------------------------------------------------|
+
+### Summary
+
++ **After** we've defined the partitions, we'll review them to ensure everything is correct.
+
+![9](../../../assets/example-ros-reborn/9.png)
+
+## Timezone and System locale
+- **Now** we need to select the time region, here, I've chosen ``Asia/Ho_Chi_Minh`` because I live there
+
+![10](../../../assets/example-ros-reborn/10.png) | ![11](../../../assets/example-ros-reborn/11.png)
+|------------------------------------------------|------------------------------------------------|
+
+- **After** selecting your region, the next step is to choose your system locale.
+- **If** you're unsure what to choose, just select ``English (US)`` as it's the **default** standard on most **other distributions**, and I chose it too.
+
+![12](../../../assets/example-ros-reborn/12.png)
+
+## System configuration
+
+- **Now** it will ask you for your computer's hostname, so enter the name you want.
+
+![13](../../../assets/example-ros-reborn/13.png)
+
+**After** completing that, the next step is to provide the **user's username**.
+
+<Aside type="caution">
+  Remember that you will use it to log in as a user.
+</Aside>
+
+![14](../../../assets/example-ros-reborn/14.png)
+
+## Configure passwords for Root and User
+
+- **After that**, we will move on to configuring passwords for ``root`` and ``user`` accounts.
++ **And now** we'll begin with setting up the ``root`` password.
+
+![15](../../../assets/example-ros-reborn/15.png) | ![16](../../../assets/example-ros-reborn/16.png) |
+|-----------------|----------------|
+
+- **Once** we've set up the root password, we'll move on to setting up passwords for the ``user`` accounts.
+
+![17](../../../assets/example-ros-reborn/17.png) | ![18](../../../assets/example-ros-reborn/18.png) |
+|-----------------|----------------|
+
+## Kernel selection
+- **The next step** is to select the **kernel** that will be installed and used as the **default**.
+
++ ``linux-renge-bore`` is the latest kernel based on the **Xanmod Kernel** and **BORE Schedule**,
+  with **O3 optimization** and **other features** that make laptops/desktops/gaming significantly smoother,
+  reducing lag and stutter during heavy background tasks. However, it is not optimized for long-term workloads or servers.
+  
++ ``linux-renge-lts`` is also the latest kernel (in terms of official Linux kernel versions for LTS) based on the **Xanmod Kernel**,
+  built with **O3 optimization**.
+  It excels in smoothness, low latency, and better laptops/desktop/gaming performance than the regular kernel,
+  but maintains **long-term** stability and is less optimized than ``linux-renge-bore``.
+
+<Aside type="tip">
+ **Choose** ``linux-renge-bore`` if you're unsure which one to choose, as it offers the most comprehensive support (**recommended** by the **author**).
+</Aside>
+
+<Aside type="caution">
+**If** you are experiencing a black screen boot issue when booting into **Linux Latest** but not with **Linux LTS**, then select ``linux-renge-lts``.
+</Aside>
+
+![19](../../../assets/example-ros-reborn/19.png)
+
+## Filesystem
+
+<Aside type="note">
+  **Currently**, RengeOS only supports bcachefs and xfs, but in the future it will probably support more :) for example, btrfs, f2fs, etc.
+</Aside>
+
+- **After** selecting your desired kernel, you will see something like this (for the ``linux-renge-bore`` option).
+- **If** we selected ``linux-renge-lts``, only the **xfs filesystem** option will be **displayed** because it doesn't support **bcachefs filesystem**.
+- **Anyway**, that's your decision, but I still recommend choosing **bcachefs filesystem** if possible because RengeOS currently has strong support for it.
+
+![20](../../../assets/example-ros-reborn/20.png) | ![21](../../../assets/example-ros-reborn/21.png)
+
+## Configure Zram (Virtual RAM)
+
+- **After** successfully completing filesystem selection configuration process, the next step is to choose whether or not to enable Zram.
+
+<Aside type="note">
+**The following** scenarios may occur:
++ **If** you see that your device has **less than 8GB** of physical RAM, it's recommended to prioritize selecting ``Yes`` as
+  it can help prevent RAM overflow later on during crashes,
+  building apps from source code, playing demanding games, etc.
++ **If** you already have **too much** RAM or **enough** for your needs without needing more virtual RAM, you can choose ``No``.
+</Aside>
+
+![22](../../../assets/example-ros-reborn/22.png)
+
+## Check before the installation process begins
+
+- **Now** we need to review and confirm whether it has met expectations.
+- **If** you're okay with it, you can select **Yes**. Otherwise, select **No**, and you can start the process again.
+
+<Aside type="caution">
+  **Note that** selecting Yes will begin the formatting and configuration process according to your choices.
+  **Make sure** you have backed up all important data as it will erase everything.
+</Aside>
+
+![23](../../../assets/example-ros-reborn/23.png) | ![24](../../../assets/example-ros-reborn/24.png) |
+|------------------------------------------------|--------------------------------------------------|
+
+- **The process** will then continue according to the previously configured settings.
+
+![16](../../../assets/example-ros-installer/16.png)
+
+## Wait for the installation process to complete
+
+- **Now** you can make yourself a hot cup of coffee and wait until everything is finished, and you will reach the completion menu.
+
+![25](../../../assets/example-ros-reborn/25.png) | ![24](../../../assets/example-ros-installer/24.png) |
+|------------------------------------------------|-----------------------------------------------------|
+
+- **Congratulations! You have successfully restored RengeOS to factory settings with ros-reborn without needing a USB or Live ISO, Yay!!** 🎉 🎉

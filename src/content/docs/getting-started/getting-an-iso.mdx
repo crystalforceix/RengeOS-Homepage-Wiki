@@ -6,22 +6,34 @@ title: Getting an ISO
 + **If** you want the convenience of saving time on building, you can choose to download the ISO from hosting services.
 + **If** you want your ISO to always be up-to-date, you can choose to build it from source code.
 
-## Obtain an ISO from hosting services (Any)
+## Obtain an ISO
 <br />
-**Last time the ISO was built:** ``2026-02-09``
+**Last time the ISO was built:** ``2026-02-10``
 
+- ### RengeOS ISO (Minimal Edition)
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-<CardGrid stagger>
   <Card title="SourceForge (Latest)" icon="cloud-download">
     Obtain an ISO here: <a href="https://sourceforge.net/projects/rengeos/files/RengeOS-ISO/Latest/" target="_blank" rel="noopener noreferrer">Download</a>
   </Card>
   <Card title="Github Release (Latest)" icon="cloud-download">
     Obtain an ISO here: <a href="https://github.com/RengeOS/Source-ISO/releases/latest" target="_blank" rel="noopener noreferrer">Download</a>
   </Card>
-</CardGrid>
+
+- ### RengeOS ISO (Niri WM Edition) -> Coming Soon!
+
+  <Card title="SourceForge (Latest)" icon="cloud-download">
+    Obtain an ISO here: <a href="" target="_blank" rel="noopener noreferrer">Coming Soon!</a>
+  </Card>
+
+- ### RengeOS ISO (Hyprland WM Edition) -> Coming Soon!
+
+  <Card title="SourceForge (Latest)" icon="cloud-download">
+    Obtain an ISO here: <a href="" target="_blank" rel="noopener noreferrer">Coming Soon!</a>
+  </Card>
 
 ## Build it from source code (Arch-based)
+
 import { Aside } from '@astrojs/starlight/components';
 
 <Aside type="caution">
@@ -29,6 +41,7 @@ import { Aside } from '@astrojs/starlight/components';
 </Aside>
 
 **Let's get started!**
+### With RengeOS ISO (Minimal Edition)
 
 + **First**, you need to git clone this folder to your HOME directory.
 
@@ -43,6 +56,12 @@ cd ~ && git clone https://github.com/RengeOS/Source-ISO && cd ~/Source-ISO/
 ```
 + **After** the build process is complete, we will have the ISO file located in the ``out`` folder.
 + **Inside** the `out` folder, you will find the **ISO file** and the **SHA256 checksum file**.
+
+---------------------------------
+### With RengeOS ISO (Niri WM Edition) -> Coming Soon!
+
+---------------------------------
+### With RengeOS ISO (Hyprland WM Edition) -> Coming Soon!
 
 ## Checksum ISO file (Recommend)
 

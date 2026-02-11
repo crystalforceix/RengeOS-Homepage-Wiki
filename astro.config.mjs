@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightThemeGalaxy from 'starlight-theme-galaxy'
+
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://rengeos-wiki.vercel.app',
